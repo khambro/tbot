@@ -4,76 +4,48 @@ var twit = require('twit');
 var config = require('./config.js');
 var Twit = new twit(config);
 
-// var TwitterPackage = require('twitter');
-//
-//
-// var config = require('./config.js');
-//
-// //make a new Twitter object
-// var Twitter = new TwitterPackage(config);
 
-// var stream = function(){
+
+// var spence = function(){
+//   var params = {
+//       // track: '#cutedogs, #dogs, #dogparty, #dogdays,',
+//       screen_name: 'robospence',
+//       // track: '@robospence, robospence, @yappytrails',
+//       language: 'en',
+//       // user: '@robospence',
+//       // q: '@adaripp'
+//       result_type: 'recent'
+//   }
 //
-//   // Call the stream function and pass in 'statuses/filter', our filter object, and our callback
-//   Twitter.stream('statuses/filter', {track: '#cutedog'}, function(stream) {
+//   var spence = Twit.stream('statuses/user_timeline', {screen_name: 'robospence'});
+//   spence.on('tweet', function (tweet) {
 //
-//     // ... when we get tweet data...
-//     stream.on('data', function(tweet) {
-//
-//       // print out the text of the tweet that came in
-//       console.log(tweet.text);
-//
-//       //build our reply object
-//       var statusObj = {status: "Hi @" + tweet.user.screen_name + ", Cute dog!!"}
-//
-//       //call the post function to tweet something
-//       Twitter.post('statuses/update', statusObj,  function(error, tweetReply, response){
-//
-//         //if we get an error print it out
-//         if(error){
-//           console.log(error);
+//     console.log(tweet.text)
+//     sleep(5000000000000);
+//     Twit.post('statuses/retweet/:id', { id: tweet.id_str }, function(err, response){
+//         if (response) {
+//             console.log('Retweeted!!!');
 //         }
-//
-//         //print the text of the tweet we sent out
-//         console.log(tweetReply.text);
-//       });
+//         // if there was an error while tweeting
+//         if (err) {
+//             console.log('Something went wrong while RETWEETING... Duplication maybe...' + err);
+//         }
 //     });
 //
-//     // ... when we get an error...
-//     stream.on('error', function(error) {
-//       //print out the error
-//       console.log(error);
-//     });
-//   });
+//   })
+//
 //
 // }
 //
-//
-//
-// var stream2 = function(){
-//   var stream3 = Twitter.stream('statuses/filter', { track: '#apple', language: 'en' })
-//
-//   stream3.on('tweet', function (tweet) {
-//   console.log(tweet)
-// })
-// }
-//
-// stream2();
-//
-//
-//
-// var stream = client.stream('statuses/filter', {track: 'javascript'});
-// stream.on('data', function(event) {
-//   console.log(event && event.text);
-// });
-//
-// stream.on('error', function(error) {
-//   throw error;
-// });
+// spence();
+
+
 var stream = function(){
   var params = {
-      track: '#cutedogs, #dogs, #dogparty, #dogdays',
+      // track: '#cutedogs, #dogs, #dogparty, #dogdays,',
+      track: '@robospence, robospence, @yappytrails',
       language: 'en',
+      user: '@robospence',
       // q: '@adaripp'
       result_type: 'recent'
   }
@@ -95,7 +67,6 @@ var stream = function(){
     });
 
   })
-
 
 }
 
