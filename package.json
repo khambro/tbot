@@ -1,12 +1,13 @@
 {
-  "name": "bot_round_2",
+  "name": "dog_bot",
   "version": "1.0.0",
-  "description": "bot round 2",
-  "main": "app.js",
+  "description": "retweeting cute dogs via the streaming API",
+  "main": "stream.js",
   "scripts": {
+    "start": "node stream.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Karen Hambro",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^6.0.0",
